@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  face_recognition:
+    build: .
+    container_name: face_reco_app
+    volumes:
+      - .:/app  # Bind mount to reflect code changes in the container
+    working_dir: /app
+    command: ["python", "detector.py"]
